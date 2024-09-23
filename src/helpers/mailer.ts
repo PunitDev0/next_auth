@@ -14,12 +14,13 @@ export const sendEmail = async ({email, emailtype, userId}:any)=>{
                 {resetToken : hashedToken, resetTokenExpiry: Date.now() + 3600000});
         }
 
-        const transport = nodemailer.createTransport({
+        // // Looking to send emails in production? Check out our Email API/SMTP product!
+          const transport = nodemailer.createTransport({
             host: "sandbox.smtp.mailtrap.io",
             port: 2525,
             auth: {
-              user: "5e7bf86c8d7acc",//❌
-              pass: "c4fe6eea9224e7"//❌
+              user: "5e7bf86c8d7acc",
+              pass: "c4fe6eea9224e7"
             }
           });
 

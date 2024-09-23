@@ -1,10 +1,10 @@
 import {connect} from '@/src/dbConfig/dbConfig';
-import User from '@/src/models/userModels';
+connect();// connect to database
+import User from '@/src/models/userModels';// get models
 import { request } from 'http';
-import {NextRequest, NextResponse} from 'next/server';
+import {NextRequest, NextResponse} from 'next/server'; // for use server side logics handlles
 import bcrypt from 'bcryptjs';
-import { sendEmail } from '@/src/app/mailter';
-connect();
+import { sendEmail } from '@/src/app/mailter';// impor sendemail function from helper folder
 
 export async function POST(request: NextRequest){
     try{
